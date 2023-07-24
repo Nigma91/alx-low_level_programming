@@ -1,27 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - print first 50 Fibonacci numbers
+ * main - print sum of even Fionacci sequence up to 4,000,000
  * Return: 0
  */
 
 int main(void)
 {
-	int counter;
-	int countto = 50;
-	long a = 1;
-	long b = 2;
+	int sum_of_evens = 0;
+	int a;
+	int b;
+	int sum = 1;
 
-	for (counter = 1; counter <= (countto / 2); counter++)
+	a = 1;
+	b = 1;
+
+	while (b < 4000000)
 	{
-		printf("%li %li ", a, b);
-		a += b;
-		b += a;
+		sum = a + b;
+		a = b;
+		b = sum;
+		if ((sum <= 4000000) && (sum % 2 == 0))
+			sum_of_evens += sum;
 	}
-	if (countto % 2 == 1)
-		printf("%li", a);
-
-	printf("\n");
+	printf("%d\n", sum_of_evens);
 
 	return (0);
 }
