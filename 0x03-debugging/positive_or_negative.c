@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
+ *positive-or_negative - prints if intern i is positive, negative or zero
+ *@i - input integer
  *Return: Always 0 (Success)
  */
 
